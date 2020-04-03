@@ -1,0 +1,82 @@
+#scroll-down-arrow {
+    // background: url(../assets/scroll_icon.svg);
+    svg {
+        position: absolute;
+        // text-indent: -9999px;
+        width: 3.6rem;
+        height: 1rem;
+        max-width: 80px;
+        background-size: 3.6rem 1rem;
+        background-repeat: no-repeat;
+        bottom: 1.7rem;
+        left: 50%;
+        margin-left: -1.8rem;
+    }
+}
+
+.override {
+    path {
+        stroke: $primary-text-color;
+    }
+}
+
+.scroll-index {
+    position: absolute;
+    right: 0;
+    margin-top: 0px;
+    margin-right: -2.35em;
+
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(90deg);
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+    }
+
+    &--left {
+        color: $primary-color;
+        bottom: 60px;
+        margin-bottom: 0px;
+        margin-right: -2.5em;
+    }
+
+    &--left::after {
+        @extend .scroll-index::after; 
+        width: 5em;
+        left: 0;
+        background: $primary-color;
+    }
+
+
+    &--right {
+        color: $primary-text-color;
+        top: 1.7em;
+    }
+
+    &--right::after {
+        @extend .scroll-index::after; 
+        width: 4.05em;
+        right: 0;
+        background: $primary-text-color;
+    }
+}
+
+#contact-index {
+    margin-right: -2.9em;
+    top: 2.1em;
+    &::after {
+        width: 5.0em;
+    }
+}
