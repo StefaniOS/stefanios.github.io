@@ -19,6 +19,7 @@ body {
   display: absolute;
   width: 90.5%;
   margin: 0 auto;
+  border: 0.1px solid #5a5a5a;
 }
 
 section {
@@ -43,6 +44,101 @@ h2 {
 
 h3 {
   font-size: 3em;
+}
+
+@media screen and (min-width: 841px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    height: 100vh;
+    width: auto;
+    text-align: center;
+  }
+  .mobile h1 {
+    font-size: 2em;
+    color: #2b2a2a;
+  }
+  .mobile h2 {
+    font-size: 1.2em;
+    color: #676767;
+  }
+  .mobile .wrapper {
+    width: 90%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mobile .title-mobile {
+    margin-top: 1em;
+  }
+  .mobile .description {
+    margin-top: 1.5em;
+  }
+  .mobile .description p {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    font-size: 1.3em;
+  }
+  .mobile .description #mail {
+    font-size: 1.5em;
+    text-decoration: underline;
+  }
+  .mobile .social-icons {
+    position: relative;
+    width: 10rem;
+    height: 3rem;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mobile .social-icons .icon {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 840px) and (orientation: landscape) {
+  .mobile .avatar img {
+    min-width: 90px;
+    min-height: 90px;
+    width: 90px;
+  }
+  .mobile .social-icons {
+    position: absolute;
+    display: block;
+    width: 3rem;
+    height: 168px;
+    right: 2rem;
+    top: 1rem;
+  }
+  .mobile .social-icons .icon {
+    margin-top: 0.5em;
+  }
 }
 
 #scroll-down-arrow svg {
@@ -82,7 +178,7 @@ h3 {
           justify-content: center;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -97,7 +193,7 @@ h3 {
 .scroll-index--left {
   color: white;
   bottom: 60px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-right: -2.5em;
 }
 
@@ -125,6 +221,35 @@ h3 {
 
 #contact-index::after {
   width: 5.0em;
+}
+
+@media screen and (max-width: 1280px) {
+  .scroll-index {
+    font-size: 1.5rem;
+  }
+  .scroll-index::after, .scroll-index--left::after, .scroll-index--right::after {
+    bottom: 0.5rem;
+  }
+  .scroll-index--left {
+    margin-bottom: 0px;
+    bottom: 2.15em;
+  }
+  .scroll-index--right {
+    color: #2b2a2a;
+    top: 1.2em;
+  }
+  .scroll-index--right::after {
+    width: 3.9em;
+  }
+  #contact-index {
+    top: 1.8em;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .scroll-index {
+    display: none;
+  }
 }
 
 nav li a {
@@ -214,7 +339,7 @@ nav li a:hover:after {
   position: absolute;
   z-index: -1;
   margin-top: 45px;
-  margin-left: 3px;
+  margin-left: 0px;
   height: 0;
   width: 65%;
   background: rgba(196, 196, 196, 0.3);
@@ -235,7 +360,7 @@ nav li a:hover:after {
   position: absolute;
   z-index: -1;
   margin-top: 140px;
-  margin-left: 3px;
+  margin-left: 0px;
   height: 0;
   width: 105%;
   background: rgba(196, 196, 196, 0.3);
@@ -301,6 +426,33 @@ header nav ul li a {
   padding: 6px 9pt;
 }
 
+@media screen and (max-width: 1280px) {
+  .title {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+  }
+  .title::before, .title::after {
+    display: none;
+  }
+  #hero {
+    font-size: 1.5em;
+  }
+  header {
+    padding-top: 1.5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 42px;
+  }
+  .scroll-index {
+    display: none;
+  }
+}
+
 #about {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -329,20 +481,16 @@ header nav ul li a {
 
 #about .background-text p {
   position: absolute;
-  font-size: 32.5vmax;
+  font-size: calc(120px + 520 * ((100vw - 600px) / 1320));
   font-weight: bold;
   text-align: center;
   margin: 0;
-  bottom: -8vh;
+  bottom: calc(100px - 200 * ((100vw - 1280px) / 640));
   color: whitesmoke;
   text-transform: uppercase;
 }
 
-#about .about-content {
-  position: absolute;
-}
-
-#about .avatar {
+.avatar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,8 +504,8 @@ header nav ul li a {
   margin-top: 6vmin;
 }
 
-#about .avatar img {
-  width: 24vmin;
+.avatar img {
+  width: calc(7rem + 8vmax);
   height: auto;
   max-width: 320px;
   max-height: 320px;
@@ -365,7 +513,22 @@ header nav ul li a {
   min-height: 120px;
 }
 
-#about .skills-container {
+.about-content {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.skills-container {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: justify;
@@ -373,11 +536,11 @@ header nav ul li a {
           justify-content: space-between;
   -ms-grid-columns: auto auto auto auto;
       grid-template-columns: auto auto auto auto;
-  grid-column-gap: 4.5vw;
-  margin-top: 5.0rem;
+  grid-column-gap: 4em;
+  margin-top: calc(3em + 1vw);
 }
 
-#about .skills-container .skills-column {
+.skills-container .skills-column {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -392,22 +555,27 @@ header nav ul li a {
   text-transform: uppercase;
 }
 
-#about .skills-container .skills-column h3 {
+.skills-container .skills-column h3 {
   margin: 0;
   padding: 0;
+  font-size: calc(4em + 6em * ((100vw - 30vw) / 70vw));
 }
 
-#about .skills-container .skills-column p {
-  font-size: 2.0em;
+.skills-container .skills-column p {
+  font-size: calc(24px + 8 * ((100vw - 1280px) / 640));
   max-width: 16vw;
+  text-align: left;
 }
 
 @media screen and (max-width: 1280px) {
-  .skills-column h3 {
-    font-size: 2.0em !important;
+  .skills-container {
+    margin-top: 1.2em;
   }
-  .skills-column p {
-    font-size: 1.3em !important;
+  .skills-container .skills-column h3 {
+    font-size: 2.3rem;
+  }
+  .skills-container .skills-column p {
+    font-size: 1.4rem;
   }
 }
 
@@ -454,12 +622,12 @@ header nav ul li a {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: -8em;
-  max-width: 50vw;
+  max-width: 80vw;
 }
 
 .contact-content h3 {
   margin: 0;
-  font-size: 10em;
+  font-size: 12rem;
   text-align: center;
   text-transform: uppercase;
   color: white;
@@ -467,15 +635,15 @@ header nav ul li a {
 }
 
 .contact-content p {
-  margin-top: 0.8em;
-  font-size: 2em;
-  max-width: 60%;
+  margin-top: 1.0rem;
+  font-size: 2rem;
+  max-width: 70%;
   text-align: center;
   color: #2b2a2a;
 }
 
 #mail {
-  font-size: 3.5em;
+  font-size: 3rem;
   color: #2b2a2a;
 }
 
@@ -498,20 +666,20 @@ header nav ul li a {
 
 .social-icons {
   position: absolute;
-  width: 48px;
+  width: 3rem;
   height: 168px;
-  right: -2.5vw;
+  right: -3rem;
 }
 
 .social-icons .icon {
   display: block;
   text-indent: -9999px;
   width: 100%;
-  height: 48px;
-  background-size: auto 48px;
-  background-repeat: no-repeat;
+  height: 3rem;
+  background-size: auto 3rem !important;
+  background-repeat: no-repeat !important;
   background-size: cover;
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .social-icons #github {
@@ -524,6 +692,19 @@ header nav ul li a {
 
 .social-icons #facebook {
   background: url(../assets/social_icon_3.svg);
+}
+
+@media screen and (max-width: 1280px) {
+  .contact-content h3 {
+    font-size: 8rem;
+  }
+  .contact-content p {
+    font-size: 1.5rem;
+  }
+  .social-icons .icon {
+    height: 2.5rem;
+    background-size: auto 2.5rem !important;
+  }
 }
 
 .footer {

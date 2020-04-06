@@ -33,7 +33,7 @@
     justify-content: center;
 
     transform: rotate(90deg);
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
 
@@ -48,7 +48,7 @@
     &--left {
         color: $primary-color;
         bottom: 60px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         margin-right: -2.5em;
     }
 
@@ -78,5 +78,39 @@
     top: 2.1em;
     &::after {
         width: 5.0em;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .scroll-index {
+        font-size: 1.5rem;
+
+        &::after {
+            bottom: 0.5rem;
+        }
+
+        &--left {
+            margin-bottom: 0px;
+            bottom: 2.15em;
+        }
+
+        &--right {
+            color: $primary-text-color;
+            top: 1.2em;
+        }
+
+        &--right::after {
+            width: 3.9em;
+        }
+    }
+
+    #contact-index {
+        top: 1.8em;
+    }
+ }
+
+@media screen and (max-width: 840px) {
+    .scroll-index {
+        display: none;
     }
 }

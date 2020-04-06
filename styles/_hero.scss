@@ -40,7 +40,7 @@
 
         z-index: -1;
         margin-top: 45px;
-        margin-left: 3px;
+        margin-left: 0px;
         height: 0;
         width: 65%;
         background: rgba($dark-gray, 0.3);
@@ -63,7 +63,7 @@
         position: absolute;
         z-index: -1;
         margin-top: 140px;
-        margin-left: 3px;
+        margin-left: 0px;
         height: 0;
         width: 105%;
         background: rgba($dark-gray, 0.3);
@@ -123,4 +123,36 @@ header {
     box-sizing: border-box;
     margin-top: -7px;
     padding: 6px 9pt;
+}
+
+@media screen and (max-width: 1280px) {
+    .title {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+
+        &::before, &::after {
+            display: none;
+        }
+    }
+
+    #hero {
+        font-size: 1.5em;
+    }
+
+    header {
+        padding-top: 1.5em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .scroll-index {
+        display: none;
+    }
 }
